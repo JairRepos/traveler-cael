@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+
+    <!-- AOS - Animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Travel Page</title>
+</head>
+<body>
+
+  <!-- component -->
+<!-- Create Navbar Menu -->
+<!-- component -->
+	<nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 px-4 py-4 flex justify-between items-center bg-white" data-aos="fade-in" data-aos-duration="1400">
+		<a class="text-3xl font-bold leading-none" href="#">
+			<h1>Traveler</h1>
+		</a>
+		<div class="lg:hidden">
+			<button class="navbar-burger flex items-center text-blue-600 p-3">
+				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Mobile menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div>
+		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+			<li><a class="text-sm font-medium text-gray-600 hover:text-gray-700" href="#">Home</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="option-nav text-sm font-medium text-gray-600 hover:text-gray-700" href="#categories">Category</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="option-nav text-sm font-medium text-gray-600 hover:text-gray-700" href="#about">About us</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="option-nav text-sm font-medium text-gray-600 hover:text-gray-700" href="#comments">Comments</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="option-nav text-sm font-medium text-gray-600 hover:text-gray-700" href="#contact">Contact</a></li>
+		</ul>
+		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-200 hover:bg-gray-300 text-sm text-gray-900 font-bold  rounded-xl transition duration-700 ease-in-out" href="#">Sign In</a>
+		<a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-700 ease-in-out" href="#">Sign up</a>
+	</nav>
+
+  <!-- Responsive Nav -->
+  
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<a class="mr-auto text-3xl font-bold leading-none" href="#">
+					<svg class="h-12" alt="logo" viewBox="0 0 10240 10240">
+				        <path xmlns="http://www.w3.org/2000/svg" d="M8284 9162 c-2 -207 -55 -427 -161 -667 -147 -333 -404 -644 -733 -886 -81 -59 -247 -169 -256 -169 -3 0 -18 -9 -34 -20 -26 -19 -344 -180 -354 -180 -3 0 -29 -11 -58 -24 -227 -101 -642 -225 -973 -290 -125 -25 -397 -70 -480 -80 -22 -3 -76 -9 -120 -15 -100 -13 -142 -17 -357 -36 -29 -2 -98 -7 -153 -10 -267 -15 -436 -28 -525 -40 -14 -2 -45 -7 -70 -10 -59 -8 -99 -14 -130 -20 -14 -3 -41 -7 -60 -11 -19 -3 -39 -7 -45 -8 -5 -2 -28 -6 -50 -10 -234 -45 -617 -165 -822 -257 -23 -10 -45 -19 -48 -19 -7 0 -284 -138 -340 -170 -631 -355 -1107 -842 -1402 -1432 -159 -320 -251 -633 -308 -1056 -26 -190 -27 -635 -1 -832 3 -19 7 -59 10 -89 4 -30 11 -84 17 -120 6 -36 12 -77 14 -91 7 -43 33 -174 39 -190 3 -8 7 -28 9 -45 6 -35 52 -221 72 -285 7 -25 23 -79 35 -120 29 -99 118 -283 189 -389 67 -103 203 -244 286 -298 75 -49 178 -103 196 -103 16 0 27 16 77 110 124 231 304 529 485 800 82 124 153 227 157 230 3 3 28 36 54 74 116 167 384 497 546 671 148 160 448 450 560 542 14 12 54 45 90 75 88 73 219 172 313 238 42 29 77 57 77 62 0 5 -13 34 -29 66 -69 137 -149 405 -181 602 -7 41 -14 82 -15 90 -1 8 -6 46 -10 83 -3 37 -8 77 -10 88 -2 11 -7 65 -11 122 -3 56 -8 104 -9 107 -2 3 0 12 5 19 6 10 10 8 15 -10 10 -34 167 -346 228 -454 118 -210 319 -515 340 -515 4 0 40 18 80 40 230 128 521 255 787 343 118 40 336 102 395 113 28 5 53 11 105 23 25 5 59 12 75 15 17 3 41 8 55 11 34 7 274 43 335 50 152 18 372 29 565 29 194 0 481 -11 489 -19 2 -3 -3 -6 -12 -6 -9 -1 -20 -2 -24 -3 -33 -8 -73 -16 -98 -21 -61 -10 -264 -56 -390 -90 -649 -170 -1243 -437 -1770 -794 -60 -41 -121 -82 -134 -93 l-24 -18 124 -59 c109 -52 282 -116 404 -149 92 -26 192 -51 220 -55 17 -3 64 -12 105 -21 71 -14 151 -28 230 -41 19 -3 46 -7 60 -10 14 -2 45 -7 70 -10 25 -4 56 -8 70 -10 14 -2 53 -7 88 -10 35 -4 71 -8 81 -10 10 -2 51 -6 92 -9 101 -9 141 -14 147 -21 3 -3 -15 -5 -39 -6 -24 0 -52 -2 -62 -4 -21 -4 -139 -12 -307 -22 -242 -14 -700 -7 -880 13 -41 4 -187 27 -250 39 -125 23 -274 68 -373 111 -43 19 -81 34 -86 34 -4 0 -16 -8 -27 -17 -10 -10 -37 -33 -59 -52 -166 -141 -422 -395 -592 -586 -228 -257 -536 -672 -688 -925 -21 -36 -43 -66 -47 -68 -4 -2 -8 -7 -8 -11 0 -5 -24 -48 -54 -97 -156 -261 -493 -915 -480 -935 2 -3 47 -21 101 -38 54 -18 107 -36 118 -41 58 -25 458 -138 640 -181 118 -27 126 -29 155 -35 14 -2 45 -9 70 -14 66 -15 137 -28 300 -55 37 -7 248 -33 305 -39 28 -3 84 -9 125 -13 163 -16 792 -8 913 12 12 2 58 9 102 15 248 35 423 76 665 157 58 19 134 46 170 60 86 33 344 156 348 166 2 4 8 7 13 7 14 0 205 116 303 184 180 126 287 216 466 396 282 281 511 593 775 1055 43 75 178 347 225 455 100 227 236 602 286 790 59 220 95 364 120 485 6 28 45 245 50 275 2 14 7 41 10 60 3 19 8 49 10 65 2 17 6 46 9 65 15 100 35 262 40 335 3 39 8 89 10 112 22 225 33 803 21 1043 -3 41 -7 129 -11 195 -3 66 -8 136 -10 155 -2 19 -6 76 -10 125 -3 50 -8 101 -10 115 -2 14 -6 57 -10 95 -7 72 -12 113 -20 175 -2 19 -7 55 -10 80 -6 46 -43 295 -51 340 -2 14 -9 54 -15 90 -5 36 -16 97 -24 135 -8 39 -17 84 -20 100 -12 68 -18 97 -50 248 -19 87 -47 204 -61 260 -14 56 -27 109 -29 117 -30 147 -232 810 -253 832 -4 4 -7 -23 -8 -60z"></path>
+			        </svg>
+				</a>
+				<button class="navbar-close">
+					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500 fill-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="mb-1">
+						<a class="option-nav block p-4 text-sm font-medium text-gray-600 hover:bg-blue-100 hover:text-blue-600 rounded" href="#">Home</a>
+					</li>
+					<li class="mb-1">
+						<a class="option-nav block p-4 text-sm font-medium text-gray-600 hover:bg-blue-100 hover:text-blue-600 rounded" href="#categories">Categories</a>
+					</li>
+					<li class="mb-1">
+						<a class="option-nav block p-4 text-sm font-medium text-gray-600 hover:bg-blue-100 hover:text-blue-600 rounded" href="#about">About</a>
+					</li>
+					<li class="mb-1">
+						<a class="option-nav block p-4 text-sm font-medium text-gray-600 hover:bg-blue-100 hover:text-blue-600 rounded" href="#comments">Comments</a>
+					</li>
+					<li class="mb-1">
+						<a class="option-nav block p-4 text-sm font-medium text-gray-600 hover:bg-blue-100 hover:text-blue-600 rounded" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto">
+				<div class="pt-6">
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-200 hover:bg-gray-300 rounded-xl transition duration-700 ease-in-out" href="#">Sign in</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl transition duration-700 ease-in-out" href="#">Sign Up</a>
+				</div>
+				<p class="my-4 text-xs text-center text-gray-400">
+					<span>Jair Cael - 2022</span>
+				</p>
+			</div>
+		</nav>
+	</div>
+
+  <!-- Hero Section -->
+  <div class="bg-gray-50 py-6 md:py-16 mt-16">
+    <!-- container -->
+    <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">
+        <!-- hero wrapper -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+            <!-- hero text -->
+            <div class="hero-text col-span-6">
+                <h1 class="font-bold text-4xl md:text-4xl lg:text-5xl max-w-xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500" data-aos="fade-down" data-aos-duration="1500">Don't listen to what they say, Go See</h1>
+                <hr class="w-12 h-1 bg-orange-500 rounded-full mt-8">
+                <p class="text-gray-800 text-base lg:text-xl leading-relaxed mt-8 font-semibold" data-aos="fade-in" data-aos-duration="1000">Your ultimate travel companion. Carries all the information you need while travelling</p>
+                <div class="get-app flex space-x-5 mt-10 justify-center md:justify-start">
+                    <button class="apple bg-white shadow-md px-3 py-2 rounded-lg flex items-center space-x-4" data-aos="fade-in" data-aos-duration="1500">
+                        <div class="logo">
+                            <svg 
+                                class="w-6 h-6"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="419.955" height="512" 
+                                viewBox="0 0 419.955 512">
+                                <g transform="translate(-46.022)">
+                                    <path d="M185.255,512c-76.2-.439-139.233-155.991-139.233-235.21,0-129.4,97.075-157.734,134.487-157.734,16.86,0,34.863,6.621,50.742,12.48,11.1,4.087,22.588,8.306,28.975,8.306,3.823,0,12.832-3.589,20.786-6.738,16.963-6.753,38.071-15.146,62.651-15.146h.146c18.354,0,74,4.028,107.461,54.272l7.837,11.777-11.279,8.511c-16.113,12.158-45.513,34.336-45.513,78.267,0,52.031,33.3,72.041,49.292,81.665,7.061,4.248,14.37,8.628,14.37,18.208,0,6.255-49.922,140.566-122.417,140.566-17.739,0-30.278-5.332-41.338-10.034-11.191-4.761-20.845-8.862-36.8-8.862-8.086,0-18.311,3.823-29.136,7.881C221.5,505.73,204.752,512,185.753,512Z"/><path d="M351.343,0c1.888,68.076-46.8,115.3-95.425,112.342C247.9,58.015,304.54,0,351.343,0Z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="text">
+                            <p class=" text-xs text-gray-600" style="font-size: 0.5rem;">Download on the</p>
+                            <p class=" text-xs font-semibold text-gray-900">Apple Store</p>
+                        </div>
+                    </button>
+                    <button class="google bg-white shadow-md px-3 py-2 rounded-lg flex items-center space-x-4" data-aos="fade-out" data-aos-duration="1500">
+                        <div class="image">
+                            <svg 
+                                class="w-6 h-6"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                width="436.057" height="469.847" 
+                                viewBox="0 0 436.057 469.847">
+                                <g transform="translate(-16.896)">
+                                    <path d="M270.336,234.965,34.39,462.165A40.146,40.146,0,0,1,16.9,428.672V41.258A40.146,40.146,0,0,1,34.39,7.765Z" fill="#2196f3"/><path d="M352.9,155.6l-82.56,79.36L34.39,7.765a31.446,31.446,0,0,1,2.773-1.92A40.363,40.363,0,0,1,77.91,5.2Z" fill="#4caf50"/><path d="M452.95,234.965a40.791,40.791,0,0,1-21.333,36.267L352.9,314.325l-82.56-79.36L352.9,155.6l78.72,43.093A40.791,40.791,0,0,1,452.95,234.965Z" fill="#ffc107"/><path d="M352.9,314.325,77.91,464.725a40.9,40.9,0,0,1-40.747-.64,31.44,31.44,0,0,1-2.773-1.92l235.947-227.2Z" fill="#f44336"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="text">
+                            <p class="text-xs text-gray-600" style="font-size: 0.5rem;">Download it from</p>
+                            <p class="text-xs font-semibold text-gray-900">Google play</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- hero image -->
+            <div class="relative hero-image col-span-6 flex justify-center" data-aos="fade-left" data-aos-duration="1500">              
+                <img class="w-full bg-gradient-to-r from-blue-500 to-blue-600 bg-image-hero" src="/images/hero-img.png">            
+            </div>
+        </div>
+    </div>
+</div><!-- end hero -->
+
+<!-- Categories Section -->
+
+<section class="bg-gray-100 py-10" id="categories">
+  <!-- container -->
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">
+    <div class="w-full flex justify-between mb-4" data-aos="fade-right" data-aos-duration="1500">
+      <h1 class="text-2xl font-bold text-gray-900">Categories</h1>      
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-between gap-2">
+
+      <div class="relative cursor-pointer" data-aos="fade-in" data-aos-duration="500">
+        <img class="w-full h-48 rounded-xl" src="https://pix10.agoda.net/hotelImages/301716/-1/fe9724d8fb4da3dd4590353bd771a276.jpg?s=1024x768">
+        <div class="absolute rounded-xl bg-black top-0 left-0 w-full h-full opacity-30 hover:opacity-10 transition duration-700 ease-in-out"></div>
+        <span class="absolute bottom-2 left-2 text-white font-semibold text-xl text-center w-full">Beach</span>
+      </div>
+
+      <div class="relative cursor-pointer" data-aos="fade-in" data-aos-duration="1000">
+        <img class="w-full h-48 rounded-xl" src="http://az837918.vo.msecnd.net/publishedimages/Listings/1061/es-MX/images/1/rocky-mountain-photo-adventures-L-17.jpg">
+        <div class="absolute rounded-xl bg-black top-0 left-0 w-full h-full opacity-30 hover:opacity-10 transition duration-700 ease-in-out"></div>
+        <span class="absolute bottom-2 left-2 text-white font-semibold text-xl text-center w-full">Mountain</span>
+      </div>
+
+      <div class="relative cursor-pointer" data-aos="fade-in" data-aos-duration="1500">
+        <img class="w-full h-48 rounded-xl" src="https://www.machupicchu.biz/imagenes/articulos/viajar-pareja/huayna-picchu-cusco.jpg">
+        <div class="absolute rounded-xl bg-black top-0 left-0 w-full h-full opacity-30 hover:opacity-10 transition duration-700 ease-in-out"></div>
+        <span class="absolute bottom-2 left-2 text-white font-semibold text-xl text-center w-full">Tour</span>
+      </div>
+
+      <div class="relative cursor-pointer" data-aos="fade-in" data-aos-duration="2000">
+        <img class="w-full h-48 rounded-xl" src="https://exp.cdn-hotels.com/hotels/39000000/38210000/38209400/38209373/a40c6755_y.jpg?impolicy=fcrop&w=500&h=333&q=high">
+        <div class="absolute rounded-xl bg-black top-0 left-0 w-full h-full opacity-30 hover:opacity-10 transition duration-700 ease-in-out"></div>
+        <span class="absolute bottom-2 left-2 text-white font-semibold text-xl text-center w-full">Hotel</span>
+      </div>
+      
+    </div>
+  
+    <div class="w-full flex justify-between mt-8 mb-4" data-aos="fade-right" data-aos-duration="1500">
+      <h1 class="text-2xl font-bold text-gray-900">Explore</h1>      
+    </div>    
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-between gap-4">
+      <div class="bg-gray-50 rounded-b-md shadow-lg overflow-hidden rounded-xl relative" data-aos="fade-in" data-aos-duration="700">
+         <div>
+            <img class="h-64 w-full" src="https://miviaje.com/wp-content/uploads/2017/01/shutterstock_356617265.jpg" alt="venecia" />
+         </div>
+         <div class="p-3 space-y-1">
+           <div class="flex justify-between">
+            <h3 class="text-gray-700 font-bold text-xl">
+               Rialto Bridge
+            </h3>
+            <span class="text-red-500 text-xl"><ion-icon name="heart"></ion-icon></span>
+          </div>
+
+          <div class="flex items-center -mx-1">
+            <span class="text-lg text-gray-400"><ion-icon name="location"></ion-icon></span>
+            <p class="text-sm font-semibold text-gray-400">
+               Venice, Italy
+            </p>  
+          </div> 
+         </div>
+         <div class="flex items-center p-3">
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <p class="ml-2 text-gray-600 text-sm font-semibold">4.7 (18k+ reviews)</p>
+         </div>
+
+         <div class="absolute bottom-0 right-0">
+          <button
+          class="bg-blue-600 w-24 rounded-tl-lg flex justify-center py-2 text-white font-semibold transition duration-300"
+          >
+          $500
+          </button>
+         </div>         
+      </div>
+
+      <div class="bg-gray-50 rounded-b-md shadow-lg overflow-hidden rounded-xl relative"  data-aos="fade-in" data-aos-duration="1400">
+        <div>
+           <img class="h-64 w-full" src="https://cdn.culturagenial.com/es/imagenes/torre-eiffel-cke.jpg" alt="tower-eiffel" />
+        </div>
+        <div class="p-3 space-y-1">
+          <div class="flex justify-between">
+           <h3 class="text-gray-700 font-bold text-xl">
+              Eiffel Tower
+           </h3>
+           <span class="text-red-500 text-xl"><ion-icon name="heart"></ion-icon></span>
+         </div>
+
+         <div class="flex items-center -mx-1">
+           <span class="text-lg text-gray-400"><ion-icon name="location"></ion-icon></span>
+           <p class="text-sm font-semibold text-gray-400">
+              Paris, France
+           </p>  
+         </div> 
+        </div>
+        <div class="flex items-center p-3">
+         <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+         <p class="ml-2 text-gray-600 text-sm font-semibold">4.5 (3k+ reviews)</p>
+        </div>
+
+        <div class="absolute bottom-0 right-0">
+         <button
+         class="bg-blue-600 w-24 rounded-tl-lg flex justify-center py-2 text-white font-semibold transition duration-300"
+         >
+         $800
+         </button>
+        </div>         
+     </div>
+
+     <div class="bg-gray-50 rounded-b-md shadow-lg overflow-hidden rounded-xl relative" data-aos="fade-in" data-aos-duration="2100">
+      <div>
+         <img class="h-64 w-full" src="https://i.insider.com/571a57cf910584cc5e8be51b?width=700" alt="maui-beach" />
+      </div>
+      <div class="p-3 space-y-1">
+        <div class="flex justify-between">
+         <h3 class="text-gray-700 font-bold text-xl">
+            Maui Beach
+         </h3>
+         <span class="text-red-500 text-xl"><ion-icon name="heart"></ion-icon></span>
+       </div>
+
+       <div class="flex items-center -mx-1">
+         <span class="text-lg text-gray-400"><ion-icon name="location"></ion-icon></span>
+         <p class="text-sm font-semibold text-gray-400">
+            Hawaii, USA
+         </p>  
+       </div> 
+      </div>
+      <div class="flex items-center p-3">
+       <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+       <p class="ml-2 text-gray-600 text-sm font-semibold">4.9 (35k+ reviews)</p>
+      </div>
+
+      <div class="absolute bottom-0 right-0">
+       <button
+       class="bg-blue-600 w-24 rounded-tl-lg flex justify-center py-2 text-white font-semibold transition duration-300"
+       >
+       $700
+       </button>
+      </div>         
+    </div>
+
+    <div class="bg-gray-50 rounded-b-md shadow-lg overflow-hidden rounded-xl relative" data-aos="fade-in" data-aos-duration="2800">
+        <div>
+          <img class="h-64 w-full" src="http://c.files.bbci.co.uk/E02E/production/_102809375_machu.jpg" alt="machu-picchu" />
+        </div>
+        <div class="p-3 space-y-1">
+          <div class="flex justify-between">
+          <h3 class="text-gray-700 font-bold text-xl">
+              Machu Picchu
+          </h3>
+          <span class="text-red-500 text-xl"><ion-icon name="heart"></ion-icon></span>
+        </div>
+
+        <div class="flex items-center -mx-1">
+          <span class="text-lg text-gray-400"><ion-icon name="location"></ion-icon></span>
+          <p class="text-sm font-semibold text-gray-400">
+              Cuzco, Peru
+          </p>  
+        </div> 
+        </div>
+        <div class="flex items-center p-3">
+        <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+        <p class="ml-2 text-gray-600 text-sm font-semibold">4.7 (18k+ reviews)</p>
+        </div>
+
+        <div class="absolute bottom-0 right-0">
+        <button
+        class="bg-blue-600 w-24 rounded-tl-lg flex justify-center py-2 text-white font-semibold transition duration-300"
+        >
+        $900
+        </button>
+        </div>         
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- About Us Section -->
+<section class="bg-gray-50 py-12 md:py-16 relative" id="about">
+  <!-- container -->
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">
+  
+    <h2 class="font-bold text-4xl lg:text-5xl leading-tight text-center mb-10 text-blue-600" data-aos="fade-down" data-aos-duration="1500">Why choose us?</h2>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      
+      <div class="flex flex-col space-y-8 md:space-y-24 items-center">
+        <div class="flex flex-col justify-center space-y-4 items-center w-48 p-2 h-48 lg:ml-36 circle-us" data-aos="fade-down-right" data-aos-duration="1200">
+          <span class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">50k</span>
+          <p class="text-md font-bold text-gray-600 text-center">Happy Customers</p>
+        </div>
+        <div class="flex flex-col justify-center space-y-4 items-center w-48 p-2 h-48 lg:ml-36 circle-us" data-aos="fade-up-right" data-aos-duration="1200">
+          <span class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">50k</span>
+          <p class="text-md font-bold text-gray-600 text-center">Destinations contribution</p>
+        </div>     
+      </div>
+      <div class="hidden md:block img-us" data-aos="fade-in" data-aos-delay="500">
+        <img class="flex flex-col items-center mx-auto h-full" src="/images/why.png" alt="travel-location">       
+      </div>
+      <div class="flex flex-col space-y-8 md:space-y-24 items-center">
+        <div class="flex flex-col justify-center space-y-4 items-center w-48 p-2 h-48 lg:mr-36 circle-us" data-aos="fade-down-left" data-aos-duration="1200">
+          <span class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">10</span>
+          <p class="text-md font-bold text-gray-600 text-center">Years of experience</p>
+        </div> 
+        <div class="flex flex-col justify-center space-y-4 items-center w-48 p-2 h-48 lg:mr-36 circle-us" data-aos="fade-up-left" data-aos-duration="1200">
+          <span class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">+10k</span>
+          <p class="text-md font-bold text-gray-600 text-center">Travels made</p>
+        </div>      
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!--  Us Section -->
+<section class="bg-gray-100 py-12 md:py-16 relative">
+  <!-- container -->
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">  
+    <h2 class="font-bold text-4xl lg:text-5xl text-blue-600 leading-tight text-center mb-10" data-aos="fade-down" data-aos-duration="1500">Our values</h2>
+    <div class="w-full lg:w-2/4 mx-auto">
+      <p class="text-gray-900 text-lg lg:text-xl text-center font-medium" data-aos="fade-in" data-aos-duration="1500">We are committed to offering quality service to all our clients so that they have an unforgettable experience.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-center mt-24">
+      <div class="flex flex-col justify-between space-y-5 text-center" data-aos="flip-up" data-aos-duration="1500">
+        <span class="text-7xl lg:text-8xl">
+          <ion-icon class="text-red-500" name="location"></ion-icon>
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">Best Tour Guide</h3>
+        <p class="text-gray-400 text-md lg:text-lg">Reliable tour guides with 5+ years of experience</p>
+      </div>
+      <div class="flex flex-col justify-between space-y-5 text-center" data-aos="flip-up" data-aos-duration="1500">
+        <span class="text-7xl lg:text-8xl">
+          <ion-icon class="text-yellow-400" name="newspaper"></ion-icon>
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">Easy Booking</h3>
+        <p class="text-gray-400 text-md lg:text-lg">Easy and fast payment process</p>
+      </div>
+      <div class="flex flex-col justify-between space-y-5 text-center" data-aos="flip-up" data-aos-duration="1500">
+        <span class="text-7xl lg:text-8xl">
+          <ion-icon class="text-green-400" name="earth"></ion-icon>
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">Many Choices</h3>
+        <p class="text-gray-400 text-md lg:text-lg">Reliable tour guides with 5+ years of experience</p>
+      </div>      
+    </div>
+  </div>
+</section>
+
+<!-- Comments Section -->
+<section class="bg-gray-200 py-12 md:py-16 relative" id="comments">
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">  
+    <h2 class="font-bold text-4xl lg:text-5xl text-blue-600 leading-tight text-center mb-10" data-aos="fade-in" data-aos-duration="1500">What do customers say?</h2>
+    <div class="w-full lg:w-2/4 mx-auto">
+      <p class="text-gray-800 text-lg lg:text-xl text-center font-medium" data-aos="fade-up" data-aos-duration="1500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae nemo temporibus quibe status.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center mt-24">
+
+      <div class="relative flex flex-col justify-between space-y-3 text-center bg-gray-100 py-8 px-6 shadow-lg rounded-xl" data-aos="fade-up" data-aos-delay="500">
+        <div class="absolute top-0 left-0 w-full h-28 bg-gray-300 rounded-t-lg"></div>
+        <span class="flex justify-center z-40">
+          <img class="w-28 h-28 rounded-full" src="https://pbs.twimg.com/media/ChJCprrU8AENbpY.jpg">
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">Corey Taylor</h3>
+        <span class="text-gray-400">Artist</span>
+        <div class="flex justify-center space-x-3">
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-gray-300"><ion-icon name="star"></ion-icon></span>
+        </div>
+        <p class="text-gray-500 text-md">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nobis sed omnis debitis a minus.</p>    
+        <span class="absolute -top-6 right-2 text-5xl"></span>   
+      </div>
+
+      <div class="relative flex flex-col justify-between space-y-3 text-center bg-gray-100 py-8 px-6 shadow-lg rounded-xl" data-aos="fade-up" data-aos-delay="700">
+        <div class="absolute top-0 left-0 w-full h-28 bg-gray-300 rounded-t-lg"></div>
+        <span class="flex justify-center z-40">
+          <img class="w-28 h-28 rounded-full" src="https://www.humonegro.com/wp-content/ST-VINCENT-2019-560x600.png">
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">St. Vincent</h3>
+        <span class="text-gray-400">Artist</span>
+        <div class="flex justify-center space-x-3">
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star-half-outline"></ion-icon></span>
+        </div>
+        <p class="text-gray-500 text-md">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nobis sed omnis debitis a minus.</p>        
+      </div>
+
+      <div class="relative flex flex-col justify-between space-y-3 text-center bg-gray-100 py-8 px-6 shadow-lg rounded-xl" data-aos="fade-up" data-aos-delay="900">
+        <div class="absolute top-0 left-0 w-full h-28 bg-gray-300 rounded-t-lg"></div>
+        <span class="flex justify-center z-40">
+          <img class="w-28 h-28 rounded-full" src="https://tn8.tv/wp-content/uploads/2021/06/images_SECCIONES_PAGINA_WEB_8Deportivo_2014_Septiembre_08_AL_14_David_Bowie_142014.jpg">
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">David Bowie</h3>
+        <span class="text-gray-400">Artist</span>
+        <div class="flex justify-center space-x-3">
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+        </div>
+        <p class="text-gray-500 text-md">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nobis sed omnis debitis a minus.</p>        
+      </div>
+
+      <div class="relative flex flex-col justify-between space-y-3 text-center bg-gray-100 py-8 px-6 shadow-lg rounded-xl" data-aos="fade-up" data-aos-delay="1100">
+        <div class="absolute top-0 left-0 w-full h-28 bg-gray-300 rounded-t-lg"></div>
+        <span class="flex justify-center z-40">
+          <img class="w-28 h-28 rounded-full" src="https://tvyfarandula.com/wp-content/uploads/2018/05/simone-simons2.jpg">
+        </span>
+        <h3 class="text-2xl lg:text-3xl leading-tight font-semibold text-gray-800">Simone Simons</h3>
+        <span class="text-gray-400">Artist</span>
+        <div class="flex justify-center space-x-3">
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+          <span class="text-lg text-yellow-400"><ion-icon name="star"></ion-icon></span>
+        </div>
+        <p class="text-gray-500 text-md">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nobis sed omnis debitis a minus.</p>        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-100 py-12 md:py-16 relative" id="contact">
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto">  
+      <div class="mt-8 overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="p-6 mr-2" data-aos="fade-right" data-aos-duration="1500">
+                  <h1 class="text-4xl sm:text-5xl text-blue-600 font-bold tracking-tight">
+                      Get in touch
+                  </h1>
+                  <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 mt-2">
+                      Fill in the form to start a conversation
+                  </p>
+
+                  <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                      <div class="ml-4 text-md tracking-wide font-medium w-40">
+                          Miraflores
+                          - Lima Perú
+                      </div>
+                  </div>
+
+                  <div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                      </svg>
+                      <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                          +51 987 654 321
+                      </div>
+                  </div>
+
+                  <div class="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                      <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                        example@email.com
+                      </div>
+                  </div>
+              </div>
+
+              <form class="p-6 flex flex-col justify-center" data-aos="fade-left" data-aos-duration="1500">
+                  <div class="flex flex-col">
+                      <label for="name" class="hidden">Full Name</label>
+                      <input type="name" name="name" id="name" placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-blue-600 focus:outline-none">
+                  </div>
+
+                  <div class="flex flex-col mt-2">
+                      <label for="email" class="hidden">Email</label>
+                      <input type="email" name="email" id="email" placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-blue-600 focus:outline-none">
+                  </div>
+
+                  <div class="flex flex-col mt-2">
+                      <label for="tel" class="hidden">Number</label>
+                      <input type="tel" name="tel" id="tel" placeholder="Telephone Number (Optional)" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-blue-600 focus:outline-none">
+                  </div>
+
+                  <button type="submit" class="md:w-32 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mt-3 transition duration-700 ease-in-out">
+                      Submit
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+<footer class="bg-gray-50" data-aos="fade-in" data-aos-duration="1500">
+  <div class="container px-4 sm:px-8 md:px-12 xl:px-20 mx-auto py-6">  
+      <div class="lg:flex">
+          <div class="w-full -mx-6 lg:w-2/5">
+              <div class="px-6">
+                  <div>
+                    <a class="text-3xl font-bold leading-none" href="#">
+                      <h1>Traveler</h1>
+                    </a>
+                  </div>
+                  
+                  <p class="max-w-md mt-2 text-gray-800 mr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.</p>
+                  
+                  <div class="flex mt-4 -mx-2">
+                      <a href="#" class="mx-2 text-3xl text-gray-800 hover:text-blue-600">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </a>
+
+                      <a href="#" class="mx-2 text-3xl text-gray-800 hover:text-blue-600">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                      </a>
+
+                      <a href="#" class="mx-2 text-3xl text-gray-800 hover:text-blue-600">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="mt-6 lg:mt-0 lg:flex-1">
+              <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">                  
+
+                  <div>
+                      <h3 class="text-gray-800 uppercase font-bold">Categories</h3>
+                      <a href="#categories" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Beach</a>
+                      <a href="#categories" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Mountain</a>
+                      <a href="#categories" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Tour</a>
+                      <a href="#categories" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Hotel</a>
+                  </div>
+
+                  <div>
+                      <h3 class="text-gray-800 uppercase font-bold">About us</h3>
+                      <a href="#about" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Years of experience</a>
+                      <a href="#about" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Best tour guide</a>
+                      <a href="#about" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Quality service</a>
+                  </div>
+
+                  <div>
+                    <h3 class="text-gray-800 uppercase font-bold">Comments</h3>
+                    <a href="#comments" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">High valuations</a>
+                    <a href="#comments" class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">Happy customers</a>
+                  </div>
+
+                  <div>
+                    <h3 class="text-gray-800 uppercase font-bold">Contact</h3>
+                    <span class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">+51 987 654 321</span>
+                    <span class="block mt-2 text-sm text-gray-800 font-medium hover:text-blue-600 hover:underline">example@email.com</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <hr class="h-px my-6 bg-gray-300 border-none">
+
+      <div>
+          <p class="text-center text-gray-800 font-bold">© Traveler 2022 - Jair Cael</p>
+      </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="main.js"></script>
+
+</body>
+
+</html>
